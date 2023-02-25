@@ -9,11 +9,11 @@ let package = Package(
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "Credential Cache",
+            name: "Credential-Cache",
             targets: ["CredentialCache"]
         ),
         .library(
-            name: "Credential Cache UI",
+            name: "Credential-Cache-UI",
             targets: ["CredentialCacheUI"]
         ),
     ],
@@ -38,8 +38,11 @@ let package = Package(
             path: "Sources/Credential Cache UI"
         ),
         .testTarget(
-            name: "Credential Cache tests",
-            dependencies: ["CredentialCache"]
+            name: "Credential-Cache-tests",
+            dependencies: [
+                "CredentialCache"
+            ],
+            path: "Tests/Credential Cache tests"
         ),
     ]
 )
