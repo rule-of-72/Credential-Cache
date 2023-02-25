@@ -22,13 +22,13 @@ public class CredentialCacheUI {
         self.passwordPlaceholder = passwordPlaceholder
     }
 
-    public func promptForKey(hostingViewController viewController: UIViewController, completion: @escaping PromptCompletion) {
+    public func promptForKey(hostingViewController viewController: UIViewController, obscurePassword: Bool = true, completion: @escaping PromptCompletion) {
         let textCollector = TextCollector()
         textCollector.addField(originalText: nil, placeholderText: usernamePlaceholder) { text in
             !text.isEmpty
         }
 
-        textCollector.addField(originalText: nil, placeholderText: passwordPlaceholder) { text in
+        textCollector.addField(originalText: nil, placeholderText: passwordPlaceholder, secure: obscurePassword) { text in
             !text.isEmpty
         }
 

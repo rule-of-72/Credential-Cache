@@ -50,6 +50,14 @@ credUI.promptForKey(hostingViewController: self) { [weak self] credential in
 }
 ```
 
+If appropriate for your application, you can disable the obscuring of the password:
+
+```swift
+credUI.promptForKey(hostingViewController: self, obscurePassword: false) { [weak self] credential in
+⋮
+}
+```
+
 # Testing
 
 Unfortunately, Xcode does not yet support the ability to assign a **Host Application** for test cases in Swift Package Manager packages.
